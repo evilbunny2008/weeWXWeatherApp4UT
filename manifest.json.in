@@ -1,0 +1,15 @@
+{
+    "name": "weewxweatherapp.evilbunny",
+    "description": "A weather app for weeWX",
+    "architecture": "armhf",
+    "title": "weeWXWeatherApp",
+    "hooks": {
+        "weewxweatherapp": {
+            "apparmor": "weewxweatherapp.apparmor",
+            "desktop":  "weewxweatherapp.desktop"
+        }
+    },
+    "version": "0.0.1",
+    "maintainer": "Evil Bunny <evilbunny@evilbunny.org>",
+    "framework" : "ubuntu-sdk-16.04"
+}

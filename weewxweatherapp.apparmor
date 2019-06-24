@@ -1,0 +1,8 @@
+{
+    "policy_groups": [
+        "connectivity",
+        "networking",
+        "webview"
+    ],
+    "policy_version": 16.04
+}
