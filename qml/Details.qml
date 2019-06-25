@@ -407,8 +407,7 @@ Page {
                 if(root.rad_type == "image") {
                     pytest.call("main.get_radar", ["", "", force_download], function(results) {
                         var html = htmlheader + "<div style='position:absolute;top:0px;left:0px;width:100%'>" 
-                        html += "<img style='transform:rotate(90deg);width:1300px;'"
-                        html += " src='file://" + root.cachebase + "/webcam.jpg'>"
+                        html += "<img style='max-width:100%;width:1300px;' src='file://" + root.cachebase + "/radar.gif'>"
                         html += "</div>" + htmlfooter
                         radarForecast.loadHtml(html, "file:///")
                         busyIndicator.running = false
