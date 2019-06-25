@@ -15,10 +15,7 @@ This is a community maintained project that I do in my free time. While all effo
 
 ## Screen Shots
 
-<img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp/raw/master/screenshots/Screenshot_20181021-181146.jpg">
-<img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp/blob/master/screenshots/Screenshot_20181021-181157.jpg">
-<img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp/blob/master/screenshots/Screenshot_20181021-181214.jpg">
-<img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp/blob/master/screenshots/Screenshot_20181021-181247.jpg"><br>
+<img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp4UT/blob/master/screenshots/screenshot20190625_160838289.png"> <img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp4UT/blob/master/screenshots/screenshot20190625_160846177.png"> <img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp4UT/blob/master/screenshots/screenshot20190625_160959104.png"> <img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp4UT/blob/master/screenshots/screenshot20190625_161003073.png"> <img width="300px" src="https://github.com/evilbunny2008/weeWXWeatherApp4UT/blob/master/screenshots/screenshot20190625_161731410.png"><br>
 
 ## Installation
 
