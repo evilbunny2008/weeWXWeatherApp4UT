@@ -218,8 +218,8 @@ def process_bom1(data):
             myday.max += "&deg;C"
             myday.min += "&deg;C"
         else:
-            myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
-            myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+            myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
+            myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if myday.max == "&deg;C" or myday.max == "&deg;F" or myday.max == "":
             myday.max = "N/A"
@@ -319,8 +319,8 @@ def process_metoffice(data):
             myday.min += "C"
             myday.max += "C"
         else:
-            myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
-            myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+            myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
+            myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if use_icons == "1":
             myday.icon = "met" + myday.icon
@@ -384,10 +384,10 @@ def process_bom2(data):
         myday.min += "&deg;C"
     else:
         if myday.min != "":
-            myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
+            myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if myday.max != "":
-            myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+            myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
     if myday.min.startswith("&deg;"):
         myday.min = ""
@@ -431,10 +431,10 @@ def process_bom2(data):
             myday.min += "&deg;C"
         else:
             if myday.min != "":
-                myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
+                myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
             if myday.max != "":
-                myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+                myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if myday.min.startswith("&deg;"):
             myday.min = ""
@@ -507,10 +507,10 @@ def process_aemet(data):
             myday.min += "&deg;C"
         else:
             if myday.min != "":
-                myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
+                myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
             if myday.max != "":
-                myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+                myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if myday.min.startswith("&deg;"):
             myday.min = ""
@@ -589,7 +589,7 @@ def process_dwd(data):
             myday.max += "&deg;C"
         else:
             if myday.max != "":
-                myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+                myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         if not myday.max.startswith('&deg;'):
             days += str(myday) + ","
@@ -642,8 +642,8 @@ def process_metservice(data):
             myday.max += "&deg;C"
             myday.min += "&deg;C"
         else:
-            myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
-            myday.min = str(round(int(myday.min) * 9 / 5 + 32)) + "&deg;F"
+            myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
+            myday.min = str(round(float(myday.min) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         days += str(myday) + ","
 
@@ -669,8 +669,8 @@ def process_darksky(data):
         myday.icon = jarr["icon"]
         myday.timestamp = jarr['time']
         myday.day = datetime.datetime.fromtimestamp(myday.timestamp).strftime("%A")
-        myday.max = str(round(int(jarr['temperatureHigh'])))
-        myday.min = str(round(int(jarr['temperatureLow'])))
+        myday.max = str(round(float(jarr['temperatureHigh'])))
+        myday.min = str(round(float(jarr['temperatureLow'])))
 
         if metric == "1":
             myday.max += "&deg;C"
@@ -707,8 +707,8 @@ def process_owm(data):
         myday = day.Day()
         myday.timestamp = j['dt']
         myday.day = datetime.datetime.fromtimestamp(myday.timestamp).strftime("%A")
-        myday.max = str(round(int(j['temp']['max'])))
-        myday.min = str(round(int(j['temp']['min'])))
+        myday.max = str(round(float(j['temp']['max'])))
+        myday.min = str(round(float(j['temp']['min'])))
         weather = j['weather'][0]
 
         myday.text = weather['description']
@@ -848,7 +848,7 @@ def process_metie(data):
         if metric == "1":
             myday.max += "&deg;C"
         else:
-            myday.max = str(round(int(myday.max) * 9 / 5 + 32)) + "&deg;F"
+            myday.max = str(round(float(myday.max) * 9.0 / 5.0 + 32.0)) + "&deg;F"
 
         days += str(myday) + ","
 

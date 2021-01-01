@@ -31,16 +31,16 @@ CACHEBASE = os.environ.get("XDG_CACHE_HOME", "/tmp") + "/" + APP_ID
 APPBASE = os.environ.get("APP_DIR", "/tmp")
 
 HEADERS = {}
-HEADERS['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 "
-HEADERS['User-Agent'] += "(KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+HEADERS['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " + \
+                        "(KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 
 SESSION = requests.Session()
 SESSION.headers = HEADERS
 
 INIGO_VERSION = 4000
 
-ICON_VERSION = 8
-ICON_URL = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.21/icons.zip"
+ICON_VERSION = 10
+ICON_URL = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.25/icons.zip"
 
 # for a in os.environ:
 #     print('Var: ', a, 'Value: ', os.getenv(a))

@@ -78,7 +78,7 @@ def process_yahoo(data):
     days = ""
 
     bits = data.split('data-reactid="7">', 7)
-    print(bits)
+
     town, rest = bits[7].split('</h1>', 1)
     country, rest = rest.split('data-reactid="8">', 1)[1].split('</div>', 1)
     desc = town.strip() + ", " + country.strip()

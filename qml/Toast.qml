@@ -8,7 +8,8 @@ import QtQuick 2.0
 /**
   * @brief An Android-like timed message text in a box that self-destroys when finished if desired
   */
-Rectangle {
+Rectangle
+{
 
     /**
       * Public
@@ -20,12 +21,14 @@ Rectangle {
       * @param {string} text Text to show
       * @param {real} duration Duration to show in milliseconds, defaults to 3000
       */
-    function show(text, duration) {
+    function show(text, duration)
+    {
         message.text = text;
-        if (typeof duration !== "undefined") { // checks if parameter was passed
+        if (typeof duration !== "undefined")
+        {
+            // checks if parameter was passed
             time = Math.max(duration, 2 * fadeTime);
-        }
-        else {
+        } else {
             time = defaultTime;
         }
         animation.start();
@@ -45,7 +48,8 @@ Rectangle {
 
     property real margin: 10
 
-    anchors {
+    anchors
+    {
         left: parent.left
         right: parent.right
         margins: margin
@@ -57,13 +61,15 @@ Rectangle {
     opacity: 0
     color: "#222222"
 
-    Text {
+    Text
+    {
         id: message
         color: "white"
         wrapMode: Text.Wrap
         font.pixelSize: units.gu(3.5)
         horizontalAlignment: Text.AlignHCenter
-        anchors {
+        anchors
+        {
             top: parent.top
             left: parent.left
             right: parent.right
@@ -71,27 +77,33 @@ Rectangle {
         }
     }
 
-    SequentialAnimation on opacity {
+    SequentialAnimation on opacity
+    {
         id: animation
         running: false
 
 
-        NumberAnimation {
+        NumberAnimation
+        {
             to: .9
             duration: fadeTime
         }
 
-        PauseAnimation {
+        PauseAnimation
+        {
             duration: time - 2 * fadeTime
         }
 
-        NumberAnimation {
+        NumberAnimation
+        {
             to: 0
             duration: fadeTime
         }
 
-        onRunningChanged: {
-            if (!running && selfDestroying) {
+        onRunningChanged:
+        {
+            if (!running && selfDestroying)
+            {
                 root.destroy();
             }
         }

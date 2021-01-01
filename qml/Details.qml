@@ -15,25 +15,30 @@ Page {
     width: parent.width
     height: parent.height
 
-    header: PageHeader {
+    header: PageHeader
+    {
         id: pageHeader
         title: "weeWX Weather App"
 
-        trailingActionBar {
+        trailingActionBar
+        {
             actions: [
-                Action {
+                Action
+                {
                     iconName: "info"
                     text: "About App"
 
                     onTriggered: aboutPopup1.open()
                 },
-                Action {
+                Action
+                {
                     iconName: "settings"
                     text: "Settings"
 
                     onTriggered: showSettings()
                 },
-                Action {
+                Action
+                {
                     iconSource: "../assets/refresh.png"
                     text: "Refresh"
 
@@ -43,7 +48,8 @@ Page {
         }
     }
 
-    TabBar {
+    TabBar
+    {
         id: tabBar
         anchors.left: parent.left
         anchors.right: parent.right
@@ -51,13 +57,15 @@ Page {
         height: units.gu(5)
         currentIndex: swipeView.currentIndex
 
-        TabButton {
+        TabButton
+        {
             id: weatherTab
             font.pointSize: units.gu(2)
             height: units.gu(5)
             width: units.gu(12)
 
-            contentItem: Text {
+            contentItem: Text
+            {
                 color: tabBar.currentIndex == 0 ? "#ffffff" : "#000000"
                 text: "Weather"
                 font: weatherTab.font
@@ -65,17 +73,20 @@ Page {
                 verticalAlignment: Text.AlignVCenter
             }
 
-            background: Rectangle {
+            background: Rectangle
+            {
                 color: tabBar.currentIndex == 0 ? "#000000" : "#ffffff"
             }
         }
 
-        TabButton {
+        TabButton
+        {
             font.pointSize: units.gu(2)
             height: units.gu(5)
             width: units.gu(12)
 
-            contentItem: Text {
+            contentItem: Text
+            {
                 color: tabBar.currentIndex == 1 ? "#ffffff" : "#000000"
                 text: "Statistics"
                 font: weatherTab.font
@@ -83,19 +94,22 @@ Page {
                 verticalAlignment: Text.AlignVCenter
             }
 
-            background: Rectangle {
+            background: Rectangle
+            {
                 color: tabBar.currentIndex == 1 ? "#000000" : "#ffffff"
             }
         }
 
-        TabButton {
+        TabButton
+        {
             id: rftab
             text: "Forecast"
             font.pointSize: units.gu(2)
             height: units.gu(5)
             width: units.gu(12)
 
-            contentItem: Text {
+            contentItem: Text
+            {
                 color: tabBar.currentIndex == 2 ? "#ffffff" : "#000000"
                 text: rftab.text
                 font: weatherTab.font
@@ -103,16 +117,19 @@ Page {
                 verticalAlignment: Text.AlignVCenter
             }
 
-            background: Rectangle {
+            background: Rectangle
+            {
                 color: tabBar.currentIndex == 2 ? "#000000" : "#ffffff"
             }
         }
 
-        TabButton {
+        TabButton
+        {
             height: units.gu(5)
             width: units.gu(12)
 
-            contentItem: Text {
+            contentItem: Text
+            {
                 color: tabBar.currentIndex == 3 ? "#ffffff" : "#000000"
                 text: "Webcam"
                 font: weatherTab.font
@@ -120,16 +137,19 @@ Page {
                 verticalAlignment: Text.AlignVCenter
             }
 
-            background: Rectangle {
+            background: Rectangle
+            {
                 color: tabBar.currentIndex == 3 ? "#000000" : "#ffffff"
             }
         }
 
-        TabButton {
+        TabButton
+        {
             height: units.gu(5)
             width: units.gu(12)
 
-            contentItem: Text {
+            contentItem: Text
+            {
                 color: tabBar.currentIndex == 4 ? "#ffffff" : "#000000"
                 text: "Custom"
                 font: weatherTab.font
@@ -137,17 +157,20 @@ Page {
                 verticalAlignment: Text.AlignVCenter
             }
 
-            background: Rectangle {
+            background: Rectangle
+            {
                 color: tabBar.currentIndex == 4 ? "#000000" : "#ffffff"
             }
         }
     }
 
-    function showSettings() {
+    function showSettings()
+    {
         root.loadSettings()
     }
 
-    Popup {
+    Popup
+    {
         id: aboutPopup1
         padding: 10
         width: units.gu(37)
@@ -159,7 +182,8 @@ Page {
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
-        Text {
+        Text
+        {
             id: about1a
             anchors.top: parent.top
             anchors.left: parent.left
@@ -168,7 +192,8 @@ Page {
             text: "About this app"
         }
 
-        Text {
+        Text
+        {
             id: about1b
             padding: units.gu(1)
             anchors.top: about1a.bottom
@@ -199,7 +224,8 @@ Page {
                 "weeWX Weather App is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>"
         }
 
-        Button {
+        Button
+        {
             id: about1Button
             anchors.top: about1b.bottom
             width: parent.width
@@ -209,7 +235,8 @@ Page {
         }
     }
 
-    SwipeView {
+    SwipeView
+    {
         id: swipeView
         anchors.top: tabBar.bottom
         anchors.left: parent.left
@@ -217,12 +244,14 @@ Page {
         anchors.bottom: parent.bottom
         currentIndex: tabBar.currentIndex
 
-        Item {
+        Item
+        {
             id: weatherPage
             width: swipeView.width
             height: swipeView.height
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: currentConditions
                 anchors.top: parent.top
                 anchors.left: parent.left
@@ -230,7 +259,8 @@ Page {
                 height: parent.height / 2 - units.gu(1)
             }
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: radarForecast
                 anchors.top: currentConditions.bottom
                 anchors.left: parent.left
@@ -239,23 +269,27 @@ Page {
             }
         }
 
-        Item {
+        Item
+        {
             id: statsPage
             width: swipeView.width
             height: swipeView.height
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: statsData
                 anchors.fill: parent
             }
         }
 
-        Item {
+        Item
+        {
             id: forecastRadarPage
             width: swipeView.width
             height: swipeView.height
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: forecastRadar
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
@@ -264,12 +298,14 @@ Page {
             }
         }
 
-        Item {
+        Item
+        {
             id: webcamPage
             width: swipeView.width
             height: swipeView.height
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: webcam
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
@@ -278,12 +314,14 @@ Page {
             }
         }
 
-        Item {
+        Item
+        {
             id: customPage
             width: swipeView.width
             height: swipeView.height
 
-            WebEngineView {
+            WebEngineView
+            {
                 id: custom
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
@@ -293,17 +331,20 @@ Page {
         }
     }
 
-    Timer {
+    Timer
+    {
         id: updateTimer
         interval: 300000
         repeat: true
         running: false
-        onTriggered: {
+        onTriggered:
+        {
             displayall(false)
         }
     }
 
-    Component.onCompleted: {
+    Component.onCompleted:
+    {
         busyIndicator.running = true
         updateTimer.running = false
         switch(root.update_freq)
@@ -339,7 +380,8 @@ Page {
     {
         if(Connectivity.online)
         {
-            pytest.call("main.download_data", ["", force_download], function(results) {
+            pytest.call("main.download_data", ["", force_download], function(results)
+            {
                 updateDisplay(results)
             })
 
@@ -372,7 +414,8 @@ Page {
         html += "This screen is still loading.</div>" + htmlfooter
         webcam.loadHtml(html, "file:///")
 
-        pytest.call("main.get_custom", [], function(results) {
+        pytest.call("main.get_custom", [], function(results)
+        {
             custom.url = results[1]
         })
     }
@@ -383,7 +426,8 @@ Page {
         html += "Webcam is still loading.</div>" + htmlfooter
         webcam.loadHtml(html, "file:///")
 
-        pytest.call("main.get_webcam", ["", force_download], function(results) {
+        pytest.call("main.get_webcam", ["", force_download], function(results)
+        {
             var html = htmlheader + "<img style='height:99vh;width:99vw;' src='file://" + root.cachebase + "/webcam.jpg'>"
             html += htmlfooter
 
@@ -394,7 +438,8 @@ Page {
 
     function refreshData(force_download)
     {
-        if(root.show_radar == "1") {
+        if(root.show_radar == "1")
+        {
             var html = htmlheader + "<div style='text-align:center;vertical-align:middle;font-size:" + units.dp(12) + "pt;'>"
             html += "Radar URL is still loading.</div>" + htmlfooter
             radarForecast.loadHtml(html, "file:///")
@@ -403,9 +448,12 @@ Page {
             html += "Forecast Data is still downloading.</div>" + htmlfooter
             forecastRadar.loadHtml(html, "file:///")
 
-            if(root.radar_url != "") {
-                if(root.rad_type == "image") {
-                    pytest.call("main.get_radar", ["", "", force_download], function(results) {
+            if(root.radar_url != "")
+            {
+                if(root.rad_type == "image")
+                {
+                    pytest.call("main.get_radar", ["", "", force_download], function(results)
+                    {
                         var html = htmlheader + "<div style='position:absolute;top:0px;left:0px;width:100%'>" 
                         html += "<img style='max-width:100%;width:1300px;' src='file://" + root.cachebase + "/radar.gif'>"
                         html += "</div>" + htmlfooter
@@ -422,7 +470,8 @@ Page {
                 radarForecast.loadHtml(html, "file:///")
             }
 
-            pytest.call("main.process_forecast", [force_download], function(results) {
+            pytest.call("main.process_forecast", [force_download], function(results)
+            {
                 updateForecastRadar(results)
                 busyIndicator.running = false
             })
@@ -435,8 +484,10 @@ Page {
             html += "Forecast data is still downloading.</div>" + htmlfooter
             radarForecast.loadHtml(html, "file:///")
 
-            if(root.rad_type == "image") {
-                pytest.call("main.get_radar", ["", "", force_download], function(results) {
+            if(root.rad_type == "image")
+            {
+                pytest.call("main.get_radar", ["", "", force_download], function(results)
+                {
                     var html = htmlheader + "<div style='position:absolute;top:300px;left:-100px;width:100%'>" 
                     html += "<img style='transform:rotate(90deg);width:1300px;'"
                     html += " src='file://" + root.cachebase + "/radar.gif'>"
@@ -451,17 +502,20 @@ Page {
             }
 
             rftab.text = "Radar"
-            pytest.call("main.process_forecast", [force_download], function(results) {
+            pytest.call("main.process_forecast", [force_download], function(results)
+            {
                 updateRadarForecast(results)
                 busyIndicator.running = false
             })
         }
     }
 
-    function doForecastBanner(fctype, ftime, desc, showHeader) {
+    function doForecastBanner(fctype, ftime, desc, showHeader)
+    {
         var html = ""
 
-        if(fctype == "yahoo") {
+        if(fctype == "yahoo")
+        {
             html = "<div style='text-align:center;'><img style='display:block;margin:0 auto;' height='" + units.dp(29) +
                     "px' src='file://" + root.app_dir + "/assets/purple.png'/></div></br>"
         } else if(fctype == "weatherzone") {
@@ -530,7 +584,8 @@ Page {
         return html
     }
 
-    function doForecastRow(JsonObject) {
+    function doForecastRow(JsonObject)
+    {
         var html = ""
 
         if(root.use_icons == "1" && root.fctype != "wmo.int" && root.fctype != "darksky.net" && root.fctype != "openweathermap.org")
@@ -560,8 +615,10 @@ Page {
         return html
     }
 
-    function updateForecastRadar(results) {
-        if(results[0] == false) {
+    function updateForecastRadar(results)
+    {
+        if(results[0] == false)
+        {
             busyIndicator.running = false
             toast.show(results[1], 5000)
             return
@@ -576,10 +633,12 @@ Page {
 
         var JsonArray = JSON.parse(results[1])        
 
-        for(var i in JsonArray) {
+        for(var i in JsonArray)
+        {
             var JsonObject = JsonArray[i]
 
-            if(i != 0) {
+            if(i != 0)
+            {
                 html += doForecastRow(JsonObject)
             } else {
                 html += "<table style='width:100%;border:0px;'>"
@@ -616,8 +675,10 @@ Page {
         forecastRadar.loadHtml(html, "file:///")
     }
 
-    function updateRadarForecast(results) {
-        if(results[0] == false) {
+    function updateRadarForecast(results)
+    {
+        if(results[0] == false)
+        {
             busyIndicator.running = false
             toast.show(results[1], 5000)
             return
@@ -634,7 +695,8 @@ Page {
 
         html += "<table style='width:100%;'>\n"
 
-        for(var i in JsonArray) {
+        for(var i in JsonArray)
+        {
             var JsonObject = JsonArray[i]
             html += doForecastRow(JsonObject)
         }
@@ -646,8 +708,10 @@ Page {
         radarForecast.loadHtml(html, "file:///")
     }
 
-    function updateDisplay(results) {
-        if(results[0] == false) {
+    function updateDisplay(results)
+    {
+        if(results[0] == false)
+        {
             toast.show(results[1], 5000)
             return
         }
@@ -663,7 +727,8 @@ Page {
             "<table style='width:100%;border:0px;'>" + 
             "<tr><td style='font-size:" + units.dp(36) + "pt;text-align:right;'>" + bits[0] + bits[60] + "</td>"
 
-        if(bits.length > 204) {
+        if(bits.length > 204)
+        {
             html += "<td style='font-size:" + units.dp(18) + "pt;text-align:right;vertical-align:bottom;'>AT: "
             html += bits[203] + bits[60] +"</td></tr></table>"
         } else {
@@ -687,7 +752,8 @@ Page {
         html += "<tr><td><i style='font-size:" + iw + "pt;' class='flaticon-women-sunglasses'></i></td><td>" + bits[45] + "UVI</td>"
         html += "<td style='text-align:right;'>" + bits[43] + "W/m\u00B2</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='flaticon-women-sunglasses'></i></td></tr>"
 
-        if(bits.length > 202 && root.indoor_readings == "1") {
+        if(bits.length > 202 && root.indoor_readings == "1")
+        {
             html += "<tr><td><i style='font-size:" + iw + "pt;' class='flaticon-home-page'></i></td><td>" + bits[161] + bits[60] + "</td>"
             html += "<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='flaticon-home-page'></i></td></tr>"
         }
@@ -729,7 +795,8 @@ Page {
         html += "<tr><td><i style='font-size:" + iw + "pt;' class='wi wi-barometer'></i></td><td>" + bits[39] + bits[63] + "</td><td>" + convert(bits[40])
         html += "</td><td style='text-align:right;'>" + convert(bits[42]) + "</td><td style='text-align:right;'>" + bits[41] + bits[63] + "</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='wi wi-barometer'></i></td></tr>"
 
-        if(root.indoor_readings == "1") {
+        if(root.indoor_readings == "1")
+        {
             html += "<tr><td><i style='font-size:" + iw + "pt;' class='flaticon-home-page'></i></td><td>" + bits[164] + bits[60] + "</td><td>" + convert(bits[165])
             html += "</td><td style='text-align:right;'>" + convert(bits[163]) + "</td><td style='text-align:right;'>" + bits[162] + bits[60] + "</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='flaticon-home-page'></i></td></tr>"
 
@@ -737,7 +804,8 @@ Page {
             html += "</td><td style='text-align:right;'>" + convert(bits[168]) + "</td><td style='text-align:right;'>" + bits[167] + bits[64] + "</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='flaticon-home-page'></i></td></tr>"
         }
 
-        if(bits.length > 205 && bits[205] != "") {
+        if(bits.length > 205 && bits[205] != "")
+        {
             html += "<tr><td><i style='font-size:" + iw + "pt;' class='flaticon-women-sunglasses'></i></td><td>" + bits[205] + "UVI</td><td>" + convert(bits[206])
             html += "</td><td style='text-align:right;'>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m\u00B2</td><td style='text-align:right'><i style='font-size:" + iw + "pt;' class='flaticon-women-sunglasses'></i></td></tr>"
         }
@@ -774,7 +842,8 @@ Page {
         html += "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td><td>" + bits[84] + bits[63] + "</td><td>" + convert(bits[85])
         html += "</td><td style='text-align:right;'>" + convert(bits[87]) + "</td><td style='text-align:right;'>" + bits[86] + bits[63] + "</td><td style='text-align:right;'><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>"
 
-        if(bits.length > 202 && root.indoor_readings == "1") {
+        if(bits.length > 202 && root.indoor_readings == "1")
+        {
             html += "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[173] + bits[60] + "</td><td>" + convert(bits[174])
             html += "</td><td style='text-align:right;'>" + convert(bits[172]) + "</td><td style='text-align:right;'>" + bits[171] + bits[60] + "</td><td style='text-align:right;'><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
 
@@ -782,7 +851,8 @@ Page {
             html += "</td><td style='text-align:right'>" + convert(bits[176]) + "</td><td style='text-align:right;'>" + bits[175] + bits[64] + "</td><td style='text-align:right;'><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
         }
 
-        if(bits.length > 209 && bits[209] != "") {
+        if(bits.length > 209 && bits[209] != "")
+        {
             html += "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[209] + "UVI</td><td>" + convert(bits[210])
             html += "</td><td style='text-align:right'>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m\u00B2</td><td style='text-align:right'><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>"
         }
@@ -918,7 +988,8 @@ Page {
         statsData.loadHtml(html, "file:///")
     }
 
-    function getTime(str) {
+    function getTime(str)
+    {
     	str = str.trim()
 
     	if(!str.includes(" "))
@@ -927,7 +998,8 @@ Page {
         return str.split(" ", 2)[0].trim()
     }
 
-    function convert(cur) {
+    function convert(cur)
+    {
         cur = cur.trim()
         if(!cur.includes(" "))
             return cur
@@ -953,7 +1025,8 @@ Page {
         return zeroPad(hours, 10) + zeroPad(mins, 10) + zeroPad(secs, 10)
     }
 
-    function zeroPad(nr, base) {
+    function zeroPad(nr, base)
+    {
         var len = (String(base).length - String(nr).length) + 1;
         return len > 0 ? new Array(len).join('0') + nr : nr;
     }

@@ -35,7 +35,8 @@ MainView {
     property var booted: false
 
     Component.onCompleted: {
-        pytest.call("main.get_config", [], function(results) {
+        pytest.call("main.get_config", [], function(results)
+        {
             settings_url = results[0]
             indoor_readings = results[1]
             dark_theme = results[2]
@@ -69,18 +70,21 @@ MainView {
         })
     }
 
-    function afterSettings() {
+    function afterSettings()
+    {
         if(stack.depth == 1)
             loadDetails()
         else
             stack.pop()
     }
 
-    function loadSettings() {
+    function loadSettings()
+    {
         stack.push(Qt.resolvedUrl("Settings.qml"))
     }
 
-    function loadDetails() {
+    function loadDetails()
+    {
         stack.push(Qt.resolvedUrl("Details.qml"))
     }
 
