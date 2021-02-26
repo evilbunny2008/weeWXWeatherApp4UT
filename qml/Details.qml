@@ -717,7 +717,7 @@ Page {
         }
 
         var html = ""
-        var bits = results[1].split('|')
+        var bits = results[1].toString().split('|')
         // bits[60] = bits[60].replace('Â', '')
         var iw = units.dp(16)
 

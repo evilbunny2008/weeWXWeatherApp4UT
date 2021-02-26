@@ -9,7 +9,7 @@
             "desktop":  "weewxweatherapp.desktop"
         }
     },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "maintainer": "Evil Bunny <evilbunny@evilbunny.org>",
     "framework" : "ubuntu-sdk-16.04"
 }
