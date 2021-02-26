@@ -1,5 +1,4 @@
 import io.thp.pyotherside 1.5
-import QtPositioning 5.9
 import QtQuick 2.5
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.1

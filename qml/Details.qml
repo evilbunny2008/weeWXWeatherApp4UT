@@ -1,7 +1,5 @@
 import io.thp.pyotherside 1.5
 import Ubuntu.Components 1.3
-import QtLocation 5.9
-import QtPositioning 5.9
 import QtQuick 2.6
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.1
